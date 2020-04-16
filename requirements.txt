@@ -11,3 +11,4 @@ requests==2.23.0
 Werkzeug==1.0.0
 WTForms==2.2.1
 urllib3==1.25.8
+gunicorn==19.9.0
