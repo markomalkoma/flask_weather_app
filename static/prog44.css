@@ -1,0 +1,160 @@
+ *{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Aileron, Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+.header {
+  background-color: #3399ff;
+  padding: 20px;
+  text-align: center;
+  font-size: 35px;
+  color:white;
+}
+
+h1 {
+	text-align:center;
+}
+
+.column1, .column2, .column3 {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  height: 300px; 
+  border: 1px solid #ccc;
+  text-align: center;
+  color: #003366;
+  margin:1px;
+
+}
+.column4{
+  float: left;
+  width: 20%;
+  color: #003366;
+}
+#bar {
+  width: 25px;
+  height: 100px;
+  position: center;
+  position: relative;
+}
+
+table {
+  width:100%;
+}
+
+fieldset {
+  padding: 20px 0px 0px 0px;
+  border:none;
+}
+
+.big {
+	margin-bottom: 25px;
+
+}
+.big:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.footer {
+  background-color: #003366;
+  padding: 8px;
+  text-align: center;
+  color:white;
+  margin-top: 50px;
+}
+
+#plus, #minus {
+  float:right;
+  margin-left:2px;
+}
+
+input[type=text] {
+	  padding: 12px;
+  	border: 1px solid #ccc;
+  	border-radius: 4px;
+  	resize: vertical;
+  	width:25%;
+    font-size: 100%;
+}
+
+input[type=submit] {
+	background-color: #003366;
+  	color: white;
+  	padding: 12px 20px;
+  	border: none;
+  	border-radius: 4px;
+  	cursor: pointer;
+  	width:120px;
+    font-size: 100%
+}
+
+input[type=submit]:hover {
+	background-color: #3399ff;
+}
+
+.datum {
+	padding:0 12px 0 0px;
+	text-align:right;
+	color: #003366;
+
+}
+
+.flash {
+  background-color: #db99ff;
+  color:white;
+  padding:12px 20px;
+  border-radius: 4px;
+  margin-top: 20px;
+  width:25%;
+  font-size: 80%;
+}
+
+.pero{
+     animation-iteration-count: infinite;
+     animation-timing-function: linear;
+     animation-name: spin;
+}
+@keyframes spin { 100% { -webkit-transform: rotate(360deg);
+} }
+
+.stub, .kruzic, .pero {
+      position:fixed;
+      height:387px;
+      width:405px;
+    }
+
+@media (max-width: 650px) {
+  .column2, .column1, .column3, .column4 {
+    width: 100%;
+    border:none;
+  }
+
+  #grad, #plus, #minus {
+  width:100%;
+  margin-top:1px;
+  margin-left:none;
+  }
+
+  input[type=text] {
+  width:100%;
+  text-align:center;
+  padding: none;
+  margin:none;
+  }
+
+  .datum {
+  text-align:center;
+  padding:none;
+  }
+
+  .flash {
+    width:100%;
+    text-align:center;
+  }
+}

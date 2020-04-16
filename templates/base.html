@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='prog44.css') }}">
+</head>
+<body>
+	<div class="header">
+		<h2>Weather</h2>
+	</div>
+		<div >
+		{% with messages = get_flashed_messages(with_categories=true) %}
+		{% if messages %}
+		{% for categorie, message in messages %}
+		<div class='flash'>
+			{{ message }}	
+		</div>
+		{% endfor %}
+		{% endif %}
+		{% endwith %}
+	</div>
+	<fieldset>
+ 		<form id='choose' method="post">
+    		<input id ='input' type="text" name="grad" placeholder = "Belgrade" onclick="reset_f()">
+    		<input id ='grad' type="submit" value='Choose' onclick="blank_f()" >
+		</form>
+	</fieldset>
+	<script> 
+		function reset_f() {document.getElementById('choose').reset()} 
+		function blank_f() {
+			if (document.getElementById('input').value.length==0) 
+			{document.getElementById('choose').action = "{{ url_for('podaci', grad='Belgrade')}}"}
+			else 
+			{var grad_cod=document.getElementById('input').value;
+			document.getElementById('choose').action = "{{ url_for('podaci', grad='Belgrade')}}".replace('Belgrade',grad_cod)}		    
+		} 
+	</script>
+
+</body>
+</html>
+
