@@ -8,22 +8,22 @@ class Vreme:
 
 
 def neutral(grad):
-    global k
-    k=0
+    global konst
+    konst=0
     return prognoza(grad)
 
 def napred(grad):
-    global k
-    k+=1
-    if k==40:
-        k=39
+    global konst
+    konst+=1
+    if konst==40:
+        konst=39
     return prognoza(grad)
 
 def nazad(grad):
-    global k
-    k-=1
-    if k==-1:
-        k=0
+    global konst
+    konst-=1
+    if konst==-1:
+        konst=0
     return prognoza(grad)
 
 def prognoza(grad):
@@ -40,20 +40,20 @@ def prognoza(grad):
 
     stanje.grad=grad
     
-    stanje.temperatura=vreme['list'][k]['main']['temp']
-    stanje.pritisak=vreme['list'][k]['main']['pressure']
-    stanje.vlaznost=vreme['list'][k]['main']['humidity']
-    stanje.ikona=vreme['list'][k]['weather'][0]['icon']
+    stanje.temperatura=vreme['list'][konst]['main']['temp']
+    stanje.pritisak=vreme['list'][konst]['main']['pressure']
+    stanje.vlaznost=vreme['list'][konst]['main']['humidity']
+    stanje.ikona=vreme['list'][konst]['weather'][0]['icon']
     
-    opis=vreme['list'][k]['weather'][0]['description']
+    opis=vreme['list'][konst]['weather'][0]['description']
     stanje.opis=opis.capitalize()
 
-    datum=vreme['list'][k]['dt_txt']
+    datum=vreme['list'][konst]['dt_txt']
     stanje.datum=datetime.datetime.strptime(datum,'%Y-%m-%d %H:%M:%S')
     dan=stanje.datum.strftime('%a')
     stanje.uv=uv_dicto[dan]
     
-    vetar=vreme['list'][k]['wind']['speed']
+    vetar=vreme['list'][konst]['wind']['speed']
     stanje.vetar=int(vetar*3.6)
 
     return stanje
